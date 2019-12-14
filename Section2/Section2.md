@@ -30,11 +30,11 @@ function helloWorld() {
 * html 파일에서 index.js와 hello-world.js을 사용하는 매우 간단한 프로젝트다
 * 이 프로젝트에서 index.js는 hello-world.js의 helloWorld함수를 호출하고 있다
 * 따라서 index.js는 hello-world.js에 의존하고 있다
-* 여기서 만약 script태그에서 index.js와 hello-world.js의 순서를 바꾼다면 의도대로 동작하지 않을 것이다
+* 여기서 만약 index.js와 hello-world.js의 script태그의 순서를 바꾼다면 의도대로 동작하지 않을 것이다
 * 지금은 js파일 2개의 매우 간단한 프로젝트이기 때문에 이런 의존성 순서를 맞추는 것이 어렵지 않다
 * 그러나 현실의 프로젝트에서 의존성을 관리해야 하는 js파일이 10개, 20개 이상이 된다면 어떨까
 * 의존성 관리를 위한 문서 작성이 따로 필요할 수도 있는 매우 복잡한 문제가 될 것이다
-* 웹팩은 이런 복잡한 문제를 하나의 파일로 만들어 해결해준다
+* 웹팩은 이런 복잡한 문제를 자바스크립트를 하나의 파일로 만들어 해결해준다
 
 웹팩의 주요 옵션들
 
@@ -150,4 +150,4 @@ module.exports = {
   mode: 'none'
 };
 ```
-* 이제 다시 npm run build를 입력해보면 잘 작동하는 것을 확인할 수 있을 것이다
+* 다시 npm run build으로 빌드해보면 잘 작동하는 것을 확인할 수 있을 것이다

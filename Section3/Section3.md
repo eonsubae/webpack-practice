@@ -419,10 +419,11 @@ module.exports = {
 ```
 * js파일에 babel-loader를 적용할 때 node_modules에는 적용되지 않도록 exclude를 지정한다
 * preset env는 ES6이상을 ES5로 변경해준다
-* 앞서 공식스펙이 아닌 클래스 프로퍼티를 적용하려면 특별한 바벨로더가 필요하다
+* 앞서 봤었던 공식스펙이 아닌 클래스 프로퍼티를 적용하려면 특별한 바벨로더가 필요하다
   - 플러그인에 transform-class-properties를 적용하면 사용할 수 있다
 
 babel과 관련된 패키지 설치하기
 ```terminal
 $ npm i @babel/core babel-loader @babel/preset-env babel-plugin-transform-class-properties --save-dev
 ```
+* 빌드 한 뒤 잘 작동하는지 확인해보자
