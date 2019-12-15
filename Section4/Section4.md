@@ -655,3 +655,13 @@ handlebars-loader 설치하기
 ```terminal
 $ npm i handlebars-loader --save-dev
 ```
+  
+handlebars-loader를 사용하기 위해서는 handlebars 자체 패키지도 설치해야 한다
+```terminal
+$ npm i handlebars --save
+```
+
+빌드 후 확인해보기
+```terminal
+$ npm run build
+```
