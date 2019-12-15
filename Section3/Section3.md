@@ -248,7 +248,7 @@ module.exports = {
 
 Loader설치하기
 ```terminal
-$ npm i css-loader style-loader --save
+$ npm i css-loader style-loader --save-dev
 ```
 * 설치가 완료되면 다시 빌드후 브라우저에서 css가 잘 적용됐는지 확인해보자
 
@@ -318,7 +318,7 @@ module.exports = {
 
 sass-loader를 적용하기 위한 패키지 설치
 ```terminal
-$ npm i sass-loader node-sass --save
+$ npm i sass-loader node-sass --save-dev
 ```
 * 빌드 후 작성한 제대로 작동하는지 브라우저에서 확인해보자
 
