@@ -388,8 +388,8 @@ $ npm run build
 ```
 
 ![dependency-optimization](../img/dependency-optimization.png)
-* vendors~hello-world~kiwi.js라는 파일을 통해 반복해서 lodash를 다운받지 않아도 된다
-* vendors~hello-world~kiwi.js와 kiwi.js, hello-world.js는 각각 별도로 캐쉬되어 사용될 것이다
+* vendors\~hello-world\~kiwi.js라는 파일을 통해 반복해서 lodash를 다운받지 않아도 된다
+* vendors\~hello-world\~kiwi.js와 kiwi.js, hello-world.js는 각각 별도로 캐쉬되어 사용될 것이다
 * 그런데 브라우저에서 각각의 html파일을 열어보면 의도한 대로 동작하지 않는 것을 확인할 수 있을 것이다
 
 ```js
@@ -468,8 +468,8 @@ $ npm run build
 
 ![react-opt](../img/react-opt.png)
 * 우선 hello-world.js와 kiwi.js는 9킬로바이트 이상의 용량을 차지하고 있음을 확인할 수 있다
-* lodash를 공통으로 사용했을 때처럼 vendor~로 시작하는 번들파일이 생성되지 않고 있다
-* Webpack은 기본적으로 30킬로바이트 이상인 모듈에 대해서만 자동으로 번들파일을 만들어 최적화한다
+* 그리고 lodash를 공통으로 사용했을 때처럼 vendor~로 시작하는 번들파일이 생성되지 않고 있다
+* 이는 Webpack이 기본적으로 30킬로바이트 이상인 모듈에 대해서만 자동으로 번들파일을 만들어 최적화하기 때문이다
 * react는 lodash와 달리 30킬로바이트 이하의 모듈이므로 번들파일이 생성되지 않은 것이다
 * 30킬로바이트 이하의 모듈은 optimization에 옵션을 변경해 최적화해야 한다 
 
@@ -489,6 +489,7 @@ module.exports = {
   // (...)
 }
 ```
+* minSize는 byte단위로 번들을 생성하는 최소 사이즈를 의미한다
 
 빌드 후 확인해보기
 ```terminal
