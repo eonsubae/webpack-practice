@@ -5,7 +5,7 @@ Production과 Development의 차이점
 * 이 시기에는 가능한 한 빠르고 용량이 적은 파일이 결과물로 나와야 한다
 * 반면에 Development는 배포되기 이전의 결과물을 의미한다
 * 이 시기에는 가능한 한 보기 편하고 유용한 정보들을 확인할 수 있어야 한다
-  - ex. Source map으로 코드를 편하게 찾을 수 있도록 하기
+  - ex. Source map으로 코드를 편하게 보면서 디버깅 할 수 있도록 하기
 * 이처럼 Production과 Development는 구분해서 관리할 필요가 있다
 
 앞선 프로젝트들에서의 mode
@@ -171,7 +171,7 @@ module.exports = {
   ]
 };
 ```
-* production mode에서는 terser plugin은 기본으로 적용되기 때문에 제거했다
+* production mode에서는 terser plugin이 제공하는 minify는 기본으로 적용되기 때문에 플러그인을 제거했다
 
 webpack.dev.js
 ```js
@@ -248,12 +248,12 @@ module.exports = {
 package.json파일에서 파일별로 스크립트 작성하기
 ```json
 {
-  // (...)
+  /* (...) */
   "scripts": {
     "build": "webpack --config webpack.prod.js",
     "dev": "webpack --config webpack.dev.js"
   },
-  // (...)
+  /* (...) */
 }
 ```
 * 프로덕션용을 위해서는 npm run build를 사용하고
@@ -263,7 +263,7 @@ package.json파일에서 파일별로 스크립트 작성하기
 ---
 
 webpack-dev-server를 이용해 수정된 사항을 바로 적용해서 확인하기
-* 개발중에 수정된 내용이 발생하면 webpack-dev-server가 자동으로 반영해 브라우저에 적용시켜준다
+* webpack-dev-server를 사용하면 개발중에 수정된 내용이 생겼을 때 자동으로 브라우저에 반영해준다
 * 설치하기
 ```terminal
 $ npm i webpack-dev-server --save-dev
@@ -350,12 +350,12 @@ module.exports = {
 package.json에 development용 스크립트 수정하기
 ```json
 {
-  // (...)
+  /* (...) */
   "scripts": {
     "build": "webpack --config webpack.prod.js",
     "dev": "webpack-dev-server --config webpack.dev.js --hot"
   },
-  // (...)
+  /* (...) */
 }
 ```
 * dev에는 webpack-dev-server를 사용한다

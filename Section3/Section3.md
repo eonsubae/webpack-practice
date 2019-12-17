@@ -1,10 +1,10 @@
 # Section3. Loaders
 
 Loader의 필요성
-* 앞서 배웠듯이 Webpack은 의존하는 여러 자바스크립트 파일들을 하나의 파일로 합쳐준다
+* Webpack은 의존하는 여러 자바스크립트 파일들을 하나의 파일로 합쳐준다
 * 그런데 웹팩은 CSS(SASS, LESS), handlebars, XML, image 등의 파일도 자바스크립트에서 불러올 수 있게 해준다
   - 이 때 사용하는 기능이 Loader다
-* 한마디로 다시 정리하자면 Webpack의 Loader들은 자바스크립트 라이브러리로, 자바스크립트가 아닌 여러 파일들을 자바스크립트에서 불러와 사용할 수 있게끔 도와준다
+* 다시 정리하자면 Webpack의 Loader들은 자바스크립트 라이브러리로, 자바스크립트가 아닌 여러 파일들을 자바스크립트에서 불러와 사용할 수 있게끔 도와준다
 
 src 파일에 사진 하나를 저장하고 js파일에서 불러오기
 ```js
@@ -38,9 +38,9 @@ addImage();
 * 웹팩이 만든 번들 파일이 아직 image를 인식하지 못하기 때문이다
 
 Webpack이 이미지를 인식하도록 가르쳐주기
-* 웹팩이 자바스크립트가 아닌 다른 파일을 불러오려면 module을 지정해야 한다
+* 웹팩으로 만든 번들 파일이 자바스크립트가 아닌 다른 파일을 불러오려면 module프로퍼티를 작성해야 한다
 * module프로퍼티 안에는 또 다른 프로퍼티인 rules이 있다
-  - rules는 특정 규칙들을 담은 배열이다
+  - rules는 다른 파일을 불러오기 위한 특정한 규칙들을 담은 배열이다
   - 각각의 rule은 Object형태로 작성한다
   - 각각의 rule에는 2가지 옵션이 있다
   - 우선 test는 정규표현식을 사용하며 어떤 형식의 파일에 해당하는 규칙인지를 지정한다
@@ -138,8 +138,8 @@ module.exports = {
 
 ---
 
-앞서 이미지 파일과 마찬가지로 CSS파일을 불러오기
-* 우선 React나 Angular같은 SPA개발을 할 때처럼 간단한 작성했던 파일을 컴포넌트로 변경해보자
+자바스크립트 파일에서 CSS 불러오기
+* 예시를 위해 자바스크립트에서 CSS를 불러와서 사용하는 React처럼 컴포넌트를 작성했다
 ```js
 // src/components/hello-world-button/hello-world-button.js
 class HelloWorldButton {
@@ -275,10 +275,10 @@ $text-font-color: red;
   font-weight: bold;
 }
 ```
-* 앞서 작성했던 css코드를 확장자를 scss로 바꾸고 변수를 적용했다
+* 앞서 작성했던 css코드를 확장자를 scss로 바꾸고 Sass의 변수문법을 사용했다
 * 이 파일을 import하는 js파일에도 확장자를 바꿔주는 것을 잊지말자
 
-웹팩에 Sass를 사용할 수 있도록 모듈 지정하기
+웹팩 번들 파일에 Sass를 사용할 수 있도록 모듈 지정하기
 ```js
 const path = require('path');
 
@@ -368,7 +368,7 @@ You may need an appropriate loader to handle this file type, currently no loader
  @ ./src/index.js 1:0-82 3:29-45
 ```
 * 적절한 로더를 설정하지 않았기 때문에 프로퍼티를 인식하지 못하고 있다
-* 이 문제를 해결하기 위해서는 babel-loader가 필요하다
+* 이 문제를 해결하기 위해서는 babel-loader와 플러그인이 필요하다
 
 웹팩에 babel-loader모듈 추가하기
 ```js
@@ -419,8 +419,8 @@ module.exports = {
 ```
 * js파일에 babel-loader를 적용할 때 node_modules에는 적용되지 않도록 exclude를 지정한다
 * preset env는 ES6이상을 ES5로 변경해준다
-* 앞서 봤었던 공식스펙이 아닌 클래스 프로퍼티를 적용하려면 특별한 바벨로더가 필요하다
-  - 플러그인에 transform-class-properties를 적용하면 사용할 수 있다
+* Ecmascript공식스펙이 아닌 클래스 프로퍼티를 적용하려면 해당 플러그인이 필요하다
+  - options의 plugins에 transform-class-properties를 추가하면 사용할 수 있다
 
 babel과 관련된 패키지 설치하기
 ```terminal
