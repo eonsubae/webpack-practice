@@ -1,0 +1,66 @@
+{
+  "name": "tutorial",
+  "version": "1.0.0",
+  "description": "This is a Readme file.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.production.config.js",
+    "dev": "webpack-dev-server --config webpack.dev.config.js --hot",
+    "start": "node src/server.js",
+    "lint": "eslint ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.26",
+    "@fortawesome/free-brands-svg-icons": "^5.12.0",
+    "@fortawesome/free-regular-svg-icons": "^5.12.0",
+    "@fortawesome/free-solid-svg-icons": "^5.12.0",
+    "autoprefixer": "^9.7.3",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.0.3",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.19",
+    "css-loader": "^1.0.0",
+    "eslint": "^6.7.2",
+    "file-loader": "^1.1.11",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.4.1",
+    "node-sass": "^4.12.0",
+<<<<<<< HEAD
+=======
+    "postcss-loader": "^3.0.0",
+    "precss": "^4.0.0",
+>>>>>>> starting-point-for-use-cases
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.21.0",
+    "uglifyjs-webpack-plugin": "^1.2.7",
+    "webpack": "^4.16.3",
+    "webpack-cli": "^3.1.0",
+<<<<<<< HEAD
+    "webpack-dev-server": "^3.8.0"
+=======
+    "webpack-dev-server": "^3.4.1"
+>>>>>>> starting-point-for-use-cases
+  },
+  "dependencies": {
+    "babel-preset-stage-0": "^6.24.1",
+    "bootstrap": "^4.4.1",
+    "express": "^4.16.3",
+<<<<<<< HEAD
+    "handlebars": "^4.2.0",
+    "handlebars-loader": "^1.7.0",
+    "lodash": "^4.17.15",
+=======
+    "handlebars": "^4.1.2",
+    "handlebars-loader": "^1.7.0",
+    "jquery": "^3.4.1",
+    "lodash": "^4.17.11",
+    "popper.js": "^1.16.0",
+>>>>>>> starting-point-for-use-cases
+    "react": "^16.4.2"
+  }
+}
